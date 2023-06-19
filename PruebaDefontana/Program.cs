@@ -207,14 +207,13 @@ class Program
 
         if (productoConMayorMontoVentas != null)
         {
-            // Obtener el producto directamente de la lista de ventas
             var producto = ventas
                 .SelectMany(v => v.VentaDetalles)
                 .Where(d => d.IdProducto == productoConMayorMontoVentas.IdProducto)
                 .Select(d => new Producto
                 {
                     IdProducto = d.IdProducto,
-                    Nombre = d.IdProductoAux.Nombre // Utiliza la propiedad de nombre de producto correcta según tu implementación
+                    Nombre = d.IdProductoAux.Nombre
                 })
                 .FirstOrDefault();
 
