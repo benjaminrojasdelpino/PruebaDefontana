@@ -29,7 +29,7 @@ FROM
     INNER JOIN VentaDetalle D WITH(NOLOCK) ON V.ID_Venta = D.ID_Venta
     INNER JOIN Producto P WITH(NOLOCK) ON D.ID_Producto = P.ID_Producto
 WHERE
-    V.Fecha >= DATEADD(day, -30, GETDATE()) -- Filtrar ventas de los últimos 30 días
+    V.Fecha >= DATEADD(day, -30, GETDATE())
 GROUP BY
     D.ID_Producto, P.Nombre
 ORDER BY
@@ -46,7 +46,7 @@ FROM
 INNER JOIN
     Local L WITH(NOLOCK) ON V.ID_Local = L.ID_Local
 WHERE
-    V.Fecha >= DATEADD(day, -30, GETDATE()) -- Filtrar ventas de los últimos 30 días
+    V.Fecha >= DATEADD(day, -30, GETDATE())
 GROUP BY
     V.ID_Local, L.Nombre, L.Direccion
 ORDER BY
@@ -63,7 +63,7 @@ FROM
     INNER JOIN Producto P WITH(NOLOCK) ON D.ID_Producto = P.ID_Producto
     INNER JOIN Marca M WITH(NOLOCK) ON P.ID_Marca = M.ID_Marca
 WHERE
-    V.Fecha >= DATEADD(day, -30, GETDATE()) -- Filtrar ventas de los últimos 30 días
+    V.Fecha >= DATEADD(day, -30, GETDATE())
 GROUP BY
     M.ID_Marca,
     M.Nombre
