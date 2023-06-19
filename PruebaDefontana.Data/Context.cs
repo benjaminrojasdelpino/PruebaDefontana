@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 using PruebaDefontana.Data.Models;
 
-namespace PruebaDefontana.Business;
+namespace PruebaDefontana.Data;
 
 public partial class Context : DbContext
 {
